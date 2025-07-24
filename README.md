@@ -32,10 +32,6 @@
 
 ### 🚀 Быстрый запуск
 
-bash
-
-Копировать код
-
 `make run`
 
 Это:
@@ -55,15 +51,15 @@ bash
 
 1. Соберите исполняемый JAR:
 
-`mvn clean package`
+    `mvn clean package`
 
 2. Запустите:
 
-`java --module-path lib/javafx-sdk-17.0.2/lib \      --add-modules javafx.controls,javafx.fxml,javafx.graphics \      -jar target/charlsih-0.0.1-SNAPSHOT.jar`
+    `java --module-path lib/javafx-sdk-17.0.2/lib \      --add-modules javafx.controls,javafx.fxml,javafx.graphics \      -jar target/charlsih-0.0.1-SNAPSHOT.jar`
 
 💡 Если используете **JavaFX Maven Plugin**, то можно просто:
 
-`mvn javafx:run`
+    `mvn javafx:run`
 
 ---
 
