@@ -57,13 +57,13 @@ install-javafx:
 setup: install-tools install-jdk install-javafx
 	@echo "Environment setup complete"
 
-compile: setup
+compile:
 	@mkdir -p bin
 	@echo "Compiling project..."
 	@javac --release 17 --module-path $(JFX_HOME)/lib --add-modules $(JFX_MODULES) \
 		-d bin $(JAVA_FILES) || (echo "Compilation failed"; exit 1)
 
-run: compile
+run:
 	@echo "Starting application..."
 	@java --module-path $(JFX_HOME)/lib --add-modules $(JFX_MODULES) \
 		-cp bin $(MAIN_CLASS)
@@ -72,4 +72,7 @@ clean:
 	@echo "Cleaning build artifacts..."
 	@rm -rf bin lib
 
-.DEFAULT_GOAL := run
+
+default: setup compile run
+
+.DEFAULT_GOAL := default
